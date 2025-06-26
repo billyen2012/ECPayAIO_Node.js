@@ -4,13 +4,16 @@
   "description": "綠界全方位金流串接用SDK",
   "main": "index.js",
   "dependencies": {
+    "buffer": "^5.0.6",
     "elementtree": "^0.1.7",
-    "iconv-lite": "^0.4.18",
-    "buffer": "^5.0.6"
+    "iconv-lite": "^0.4.18"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build ./lib/ecpay_payment.js -o dist && cp ./index.d.ts ./dist/index.d.ts"
   },
   "keywords": [
     "npm",
